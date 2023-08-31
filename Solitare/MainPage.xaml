@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Solitare.MainPage">
+
+    <Grid>
+        
+        <!-- Background -->
+        <BoxView Color="#935B5D"
+                 ZIndex="-1000">
+        </BoxView>
+        
+        <!--Start Menu -->
+        <VerticalStackLayout x:Name="StartMenu" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20" IsVisible="False">
+            <Label 
+                Text="Marbles" TextColor="#000000" FontSize="45" Padding="0,0,0,70" HorizontalTextAlignment="Center"/>
+
+            <Button Text="New Game" TextColor="#000000" BackgroundColor="#FFFFFF" FontSize="15" WidthRequest="170" Padding="20,10" Clicked="NewGame_Clicked"></Button>
+            <Button Text="High Scores" TextColor="#000000" BackgroundColor="#FFFFFF" FontSize="15" WidthRequest="170" Padding="20,10" Clicked="HighScores_Button"></Button>
+            <Button Text="Rules" TextColor="Black" BackgroundColor="White" FontSize="15" WidthRequest="170" Padding="20,10" Clicked="Rules_Button"></Button>
+                <Button Text="Exit" TextColor="#000000" BackgroundColor="#FFFFFF" FontSize="15" WidthRequest="170" Padding="20,10" Clicked="Exit_Button"></Button>
+
+        </VerticalStackLayout>
+        
+        <!--Game Screen -->
+        <VerticalStackLayout x:Name="GameMenu" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="False">
+            
+            <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="Center" Spacing="20">
+                <Label x:Name="GameScore" TextColor="#000000" Text="Score: 0" FontSize="15"/>
+                <Label x:Name="Timer" TextColor="#000000" Text="Time: 0" FontFamily="" FontSize="15"/>
+            </HorizontalStackLayout>
+
+            <Grid x:Name="Board" HeightRequest="350" VerticalOptions="Center" HorizontalOptions="Center" ZIndex="100">
+                
+            </Grid>
+
+            <HorizontalStackLayout VerticalOptions="End" HorizontalOptions="Center" Spacing="10">
+                <Button Text="Back" TextColor="#000000" BackgroundColor="#FFFFFF" WidthRequest="170" Padding="20,10" Clicked="Back_Button"/>
+                <Button Text="End Game" TextColor="#000000" BackgroundColor="#FFFFFF" WidthRequest="170" Padding="20,10" Clicked="End_Button"/>
+            </HorizontalStackLayout>
+
+
+
+        </VerticalStackLayout>
+        <!--End Menu -->
+        <VerticalStackLayout x:Name="EndMenu" HorizontalOptions="Center" Spacing="10" IsVisible="False" Padding="0, 50, 0 ,0">
+            <Label 
+                Text="Game Over" TextColor="#000000" FontSize="45" HorizontalTextAlignment="Center"/>
+            <Label 
+               x:Name="EndScore" Text="Score: 000" TextColor="#000000" FontSize="30" Padding="0,0,0,70" HorizontalTextAlignment="Center"/>
+
+            <Button Text="Back" TextColor="#000000" BackgroundColor="#FFFFFF" WidthRequest="170" Padding="20,10" Clicked="Back_Button"/>
+
+        </VerticalStackLayout>
+
+            <!--High Scores --> 
+        <VerticalStackLayout x:Name="HighScores" HorizontalOptions="Center" VerticalOptions="Start" Spacing="10" IsVisible="False">
+                <Label 
+                Text="Highscores" TextColor="#000000" FontSize="25" HorizontalTextAlignment="Center"/>
+
+            <VerticalStackLayout x:Name="HighScoresList" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="400" MaximumHeightRequest="400">
+
+                <!--Template -->
+                <!--
+                <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="40" IsVisible="False">
+
+                    <Label FontSize="15" TextColor="#000000" Text="Pos"/>
+                    <Label FontSize="15" TextColor="#000000" Text="Score"/>
+
+                </HorizontalStackLayout> -->
+
+            </VerticalStackLayout>
+            
+            
+            <Button Text="Back" TextColor="#000000" BackgroundColor="#FFFFFF" WidthRequest="170" Padding="20,10" Clicked="Back_Button"/>
+
+
+
+
+        </VerticalStackLayout>
+        
+        <!-- Rules <VIDEO>-->
+        <VerticalStackLayout x:Name="RulesMenu" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="400" MaximumHeightRequest="400">
+            <Label
+                Text="Rules" TextColor="Black" FontSize="35" HorizontalTextAlignment="Center"/>
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+                <Label 
+                    Text="1000 Points extra for finishing the game with the marble in the middle." TextColor="Black" FontSize="25" Padding="20, 10"/>
+                <Label 
+                    Text="50 points extra wehn jumping a second marble." TextColor="Black" FontSize="25" Padding="20, 0"/>
+                <Label 
+                    Text="Finish under 5 minutes for a bonus 500 points." TextColor="Black" FontSize="25" Padding="20, 0"/>
+                <Label 
+                    Text="Can only move marble by two." TextColor="Black" FontSize="25" Padding="20, 0"/>
+                <Label 
+                    Text="Cannot move marble diagonally." TextColor="Black" FontSize="25" Padding="20, 0"/>
+                <Label 
+                    Text="Aim to finish with one marble in the middle." TextColor="Black" FontSize="25" Padding="20, 0"/>
+            </VerticalStackLayout>
+
+            <Button Text="Back" TextColor="#000000" BackgroundColor="#FFFFFF" WidthRequest="170" Padding="20,10" Margin="0,20,0,0" Clicked="Back_Button"/>
+
+        </VerticalStackLayout>
+
+    </Grid>
+
+
+</ContentPage>
